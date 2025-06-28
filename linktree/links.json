@@ -1,7 +1,0 @@
-{
-  "links": [
-    {"title": "Instagram", "url": "https://instagram.com/collectcards", "icon": "fa-brands fa-instagram"},
-    {"title": "eBay", "url": "https://www.ebay.com/usr/collectcards", "icon": "fa-brands fa-ebay"},
-    {"title": "Site officiel", "url": "https://collectcards.com", "icon": "fa-solid fa-globe"}
-  ]
-}
