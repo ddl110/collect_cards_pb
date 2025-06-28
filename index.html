@@ -1,10 +1,8 @@
 <!DOCTYPE html>
 <!--
-  Linktree page for Collect Cards.
-  Replace the URLs or titles in links.json with your own social links (Instagram,
-  eBay, official website, etc.) and customize the logo in assets/collect_cards.png.
-  Each link can optionally define an `icon` using Font Awesome classes.
-  The page automatically adapts to light or dark mode using CSS variables.
+  Improved Linktree page for Collect Cards.
+  Edit links.json to add or modify your social links. Images are loaded from the
+  assets folder. The design adapts automatically to light or dark themes.
 -->
 <html lang="fr">
 <head>
@@ -41,39 +39,42 @@
 
     body {
       font-family: 'Inter', Arial, sans-serif;
-      background: linear-gradient(120deg, var(--bg-start) 0%, var(--bg-end) 100%);
+      background: linear-gradient(150deg, var(--bg-start) 0%, var(--bg-end) 100%);
       display: flex;
       align-items: center;
       justify-content: center;
       min-height: 100vh;
       margin: 0;
+      padding: 1rem;
     }
 
-  .container {
+    .container {
       text-align: center;
-      padding: 2rem;
-      background: rgba(255, 255, 255, 0.85);
-      border-radius: 12px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-      backdrop-filter: blur(6px);
-      width: 90%;
-      max-width: 450px;
-  }
+      padding: 2.5rem 2rem;
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 16px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(10px);
+      width: 100%;
+      max-width: 500px;
+      border: 1px solid rgba(0,0,0,0.05);
+    }
 
     /* Small logo fixed in the top-left corner */
     .corner-logo {
       position: fixed;
       top: 1rem;
       left: 1rem;
-      width: 40px;
+      width: 48px;
       height: auto;
     }
 
     .logo {
-      width: 140px;
+      width: 200px;
       height: auto;
       margin-bottom: 1rem;
-      border-radius: 50%;
+      object-fit: contain;
+      border-radius: 8px;
     }
 
     h1 {
@@ -96,18 +97,19 @@
       align-items: center;
       justify-content: center;
       gap: 0.5rem;
-      padding: 1rem;
+      padding: 1rem 1.25rem;
       background: var(--button-bg);
       color: var(--button-color);
       text-decoration: none;
       border-radius: 30px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
       transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+      font-weight: 600;
     }
 
     .button:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      transform: translateY(-3px);
+      box-shadow: 0 6px 14px rgba(0,0,0,0.15);
       background: var(--accent-color);
       color: #ffffff;
     }
