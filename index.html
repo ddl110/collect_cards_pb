@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<!--
+  Linktree page for Collect Cards.
+  Replace the URLs or titles in links.json with your own social links (Instagram,
+  eBay, official website, etc.) and customize the logo in assets/logo.png.
+  Each link can optionally define an `icon` using Font Awesome classes.
+-->
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Collect Cards - Links</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Modern Google Font for a fresh look -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <!-- Font Awesome for social icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    :root {
+      --bg-start: #fdfbfb;
+      --bg-end: #ebedee;
+      --button-bg: #ffffff;
+      --button-color: #333333;
+      --accent-color: #5468ff;
+    }
+
+    body {
+      font-family: 'Inter', Arial, sans-serif;
+      background: linear-gradient(120deg, var(--bg-start) 0%, var(--bg-end) 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+
+    .container {
+      text-align: center;
+      padding: 2rem;
+      background: rgba(255, 255, 255, 0.85);
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(6px);
+      width: 90%;
+      max-width: 450px;
+    }
+
+    .logo {
+      width: 140px;
+      height: auto;
+      margin-bottom: 1rem;
+      border-radius: 50%;
+    }
+
+    h1 {
+      margin-top: 0;
+      font-size: 2rem;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    li {
+      margin: 0.5rem 0;
+    }
+
+    .button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 1rem;
+      background: var(--button-bg);
+      color: var(--button-color);
+      text-decoration: none;
+      border-radius: 30px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      background: var(--accent-color);
+      color: #ffffff;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img src="assets/logo.png" alt="Collect Cards Logo" class="logo">
+    <h1>Collect Cards</h1>
+    <p>Retrouvez-nous sur nos plateformes&nbsp;:</p>
+    <ul id="links"></ul>
+  </div>
+  <script>
+    // Load links from links.json and build the list dynamically
+    fetch('links.json')
+      .then(function(response) { return response.json(); })
+      .then(function(data) {
+        var list = document.getElementById('links');
+        data.links.forEach(function(link) {
+          var li = document.createElement('li');
+          var a = document.createElement('a');
+          a.href = link.url;
+          a.className = 'button';
+          if (link.icon) {
+            var i = document.createElement('i');
+            i.className = link.icon;
+            a.appendChild(i);
+          }
+          var span = document.createElement('span');
+          span.textContent = link.title;
+          a.appendChild(span);
+          li.appendChild(a);
+          list.appendChild(li);
+        });
+      })
+      .catch(function(err) {
+        console.error('Failed to load links.json', err);
+      });
+  </script>
+</body>
+</html>
