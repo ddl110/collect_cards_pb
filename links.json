@@ -1,7 +1,22 @@
 {
   "links": [
-    {"title": "Instagram", "url": "https://instagram.com/collectcards", "icon": "fa-brands fa-instagram"},
-    {"title": "eBay", "url": "https://www.ebay.com/usr/collectcards", "icon": "fa-brands fa-ebay"},
-    {"title": "Site officiel", "url": "https://collectcards.com", "icon": "fa-solid fa-globe"}
+    {
+      "title": "Instagram",
+      "url": "https://instagram.com/collectcards",
+      "icon": "fa-brands fa-instagram",
+      "preview": "assets/instagram_preview.jpg"
+    },
+    {
+      "title": "eBay",
+      "url": "https://www.ebay.com/usr/collectcards",
+      "icon": "fa-brands fa-ebay",
+      "preview": "assets/ebay_preview.jpg"
+    },
+    {
+      "title": "Site officiel",
+      "url": "https://collectcards.com",
+      "icon": "fa-solid fa-globe",
+      "preview": "assets/site_preview.jpg"
+    }
   ]
 }
