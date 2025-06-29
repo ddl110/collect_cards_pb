@@ -39,35 +39,35 @@
       font-family: 'Inter', Arial, sans-serif;
       background: var(--bg-color);
       color: #ffffff;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      min-height: 100vh;
       margin: 0;
+      height: 100vh; /* Ensure the page fits a single screen */
+      overflow: hidden; /* Avoid scrolling */
     }
 
     .hero {
-      /* Constrain logo so it never exceeds half of the viewport height */
+      position: relative;
       width: 100%;
-      max-height: 50vh;
-      margin-top: 1rem;
+      height: 100%;
       overflow: hidden;
     }
 
     .hero img {
+      position: absolute;
+      inset: 0;
       width: 100%;
       height: 100%;
-      object-fit: contain; /* Prevent oversizing */
-      display: block;
+      object-fit: contain; /* Ensure the full image is visible */
     }
 
     .container {
+      position: absolute;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
       text-align: center;
-      padding: 1.5rem 1rem 2rem;
       width: 100%;
       max-width: 600px;
-      /* Space the buttons below the hero image */
-      margin-top: 2rem;
+      padding: 1rem 1rem 0;
     }
 
     /* Removed corner logo: main hero already contains the branding */
@@ -151,9 +151,9 @@
   <!-- Corner logo removed: brand already shown in hero image -->
   <div class="hero">
     <img src="assets/collect_cards.png" alt="Collect Cards">
-  </div>
-  <div class="container">
-    <ul id="links"></ul>
+    <div class="container">
+      <ul id="links"></ul>
+    </div>
   </div>
   <!-- Overlay used to display a preview image before leaving the page -->
   <div id="preview-overlay">
