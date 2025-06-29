@@ -47,14 +47,17 @@
     }
 
     .hero {
-      /* Full width hero showcasing the logo */
+      /* Constrain logo so it never exceeds half of the viewport height */
       width: 100%;
-      margin-top: 2rem;
+      max-height: 50vh;
+      margin-top: 1rem;
+      overflow: hidden;
     }
 
     .hero img {
       width: 100%;
-      height: auto;
+      height: 100%;
+      object-fit: contain; /* Prevent oversizing */
       display: block;
     }
 
@@ -67,14 +70,7 @@
       margin-top: 2rem;
     }
 
-    /* Small logo fixed in the top-left corner */
-    .corner-logo {
-      position: fixed;
-      top: 1rem;
-      left: 1rem;
-      width: 48px;
-      height: auto;
-    }
+    /* Removed corner logo: main hero already contains the branding */
 
 
     ul {
@@ -152,8 +148,7 @@
   </style>
 </head>
 <body>
-  <!-- Small logo pinned in the corner -->
-  <img src="assets/logo_without.png" alt="Icône Collect Cards" class="corner-logo">
+  <!-- Corner logo removed: brand already shown in hero image -->
   <div class="hero">
     <img src="assets/collect_cards.png" alt="Collect Cards">
   </div>
