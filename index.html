@@ -123,8 +123,31 @@
       transition: opacity 0.25s ease;
     }
 
+    /* Same style for the coming soon overlay */
+    #coming-soon-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: var(--overlay-bg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 100;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.25s ease;
+    }
+
     /* Visible state for the overlay */
     #preview-overlay.active {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    /* Visible state for the coming soon overlay */
+    #coming-soon-overlay.active {
       opacity: 1;
       pointer-events: all;
     }
@@ -166,6 +189,15 @@
       </div>
     </div>
   </div>
+  <!-- Overlay displayed when a link is marked as coming soon -->
+  <div id="coming-soon-overlay">
+    <div class="preview-content">
+      <p id="coming-soon-text"></p>
+      <div class="preview-actions">
+        <button id="coming-soon-close" class="button" type="button">Fermer</button>
+      </div>
+    </div>
+  </div>
   <script>
     // Load links from links.json and build the list of buttons dynamically
     fetch('links.json')
@@ -175,11 +207,15 @@
         data.links.forEach(function(link) {
           var li = document.createElement('li');
           var a = document.createElement('a');
-          a.href = link.url;
+          a.href = link.url || '#';
           a.className = 'button';
           // Store preview image path if provided
           if (link.preview) {
             a.dataset.preview = link.preview;
+          }
+          // Store coming soon message if provided
+          if (link.comingSoon) {
+            a.dataset.comingSoon = link.message || 'En construction';
           }
           if (link.icon) {
             var i = document.createElement('i');
@@ -192,13 +228,21 @@
           li.appendChild(a);
           list.appendChild(li);
 
-          // If a preview is specified, open overlay instead of navigating
-          a.addEventListener('click', function(e) {
-            if (this.dataset.preview) {
+          // Custom behavior when the link is marked as coming soon
+          if (a.dataset.comingSoon) {
+            a.addEventListener('click', function(e) {
               e.preventDefault();
-              showPreview(this.dataset.preview, this.href);
-            }
-          });
+              showComingSoon(this.dataset.comingSoon);
+            });
+          } else {
+            // If a preview is specified, open overlay instead of navigating
+            a.addEventListener('click', function(e) {
+              if (this.dataset.preview) {
+                e.preventDefault();
+                showPreview(this.dataset.preview, this.href);
+              }
+            });
+          }
         });
       })
       .catch(function(err) {
@@ -215,6 +259,14 @@
       overlay.classList.add('active');
     }
 
+    // Display a simple overlay informing that the link is under construction
+    // msg: message to display to the user
+    function showComingSoon(msg) {
+      var overlay = document.getElementById('coming-soon-overlay');
+      document.getElementById('coming-soon-text').textContent = msg;
+      overlay.classList.add('active');
+    }
+
     // Hide overlay when clicking the close button
     document.getElementById('preview-close').addEventListener('click', function() {
       document.getElementById('preview-overlay').classList.remove('active');
@@ -222,6 +274,18 @@
 
     // Also close the overlay when clicking outside the preview image
     document.getElementById('preview-overlay').addEventListener('click', function(e) {
+      if (e.target === this) {
+        this.classList.remove('active');
+      }
+    });
+
+    // Close the coming soon overlay when clicking the button
+    document.getElementById('coming-soon-close').addEventListener('click', function() {
+      document.getElementById('coming-soon-overlay').classList.remove('active');
+    });
+
+    // Close coming soon overlay when clicking outside of the message
+    document.getElementById('coming-soon-overlay').addEventListener('click', function(e) {
       if (e.target === this) {
         this.classList.remove('active');
       }

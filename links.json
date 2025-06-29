@@ -14,9 +14,10 @@
     },
     {
       "title": "Site officiel",
-      "url": "https://collectcards.com",
       "icon": "fa-solid fa-globe",
-      "preview": "assets/site_preview.jpg"
+      "preview": "assets/site_preview.jpg",
+      "comingSoon": true,
+      "message": "Site officiel en construction"
     }
   ]
 }
