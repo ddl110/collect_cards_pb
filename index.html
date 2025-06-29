@@ -17,8 +17,7 @@
   <link rel="icon" type="image/png" href="assets/logo_without.png">
   <style>
     :root {
-      --bg-start: #fdfbfb;
-      --bg-end: #ebedee;
+      --bg-color: #030f1b; /* Main background color */
       --button-bg: #ffffff;
       --button-color: #333333;
       --accent-color: #5468ff;
@@ -28,8 +27,7 @@
     /* Dark mode colors using prefers-color-scheme */
     @media (prefers-color-scheme: dark) {
       :root {
-        --bg-start: #1e1e1e;
-        --bg-end: #2c2c2c;
+        --bg-color: #030f1b; /* Same background in dark mode */
         --button-bg: #2d2d2d;
         --button-color: #f5f5f5;
         --accent-color: #6a78ff;
@@ -39,25 +37,34 @@
 
     body {
       font-family: 'Inter', Arial, sans-serif;
-      background: linear-gradient(150deg, var(--bg-start) 0%, var(--bg-end) 100%);
+      background: var(--bg-color);
+      color: #ffffff;
       display: flex;
+      flex-direction: column;
       align-items: center;
-      justify-content: center;
       min-height: 100vh;
       margin: 0;
-      padding: 1rem;
+    }
+
+    .hero {
+      /* Full width hero showcasing the logo */
+      width: 100%;
+      margin-top: 2rem;
+    }
+
+    .hero img {
+      width: 100%;
+      height: auto;
+      display: block;
     }
 
     .container {
       text-align: center;
-      padding: 2.5rem 2rem;
-      background: rgba(255, 255, 255, 0.9);
-      border-radius: 16px;
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
-      backdrop-filter: blur(10px);
+      padding: 1.5rem 1rem 2rem;
       width: 100%;
-      max-width: 500px;
-      border: 1px solid rgba(0,0,0,0.05);
+      max-width: 600px;
+      /* Space the buttons below the hero image */
+      margin-top: 2rem;
     }
 
     /* Small logo fixed in the top-left corner */
@@ -69,18 +76,6 @@
       height: auto;
     }
 
-    .logo {
-      width: 200px;
-      height: auto;
-      margin-bottom: 1rem;
-      object-fit: contain;
-      border-radius: 8px;
-    }
-
-    h1 {
-      margin-top: 0;
-      font-size: 2rem;
-    }
 
     ul {
       list-style: none;
@@ -159,10 +154,10 @@
 <body>
   <!-- Small logo pinned in the corner -->
   <img src="assets/logo_without.png" alt="Icône Collect Cards" class="corner-logo">
+  <div class="hero">
+    <img src="assets/collect_cards.png" alt="Collect Cards">
+  </div>
   <div class="container">
-    <img src="assets/collect_cards.png" alt="Collect Cards Logo" class="logo">
-    <h1>Collect Cards</h1>
-    <p>Retrouvez-nous sur nos plateformes&nbsp;:</p>
     <ul id="links"></ul>
   </div>
   <!-- Overlay used to display a preview image before leaving the page -->
