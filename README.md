@@ -2,7 +2,7 @@
 
 Cette page sert de "linktree" moderne pour orienter les utilisateurs vers vos différents réseaux. Elle s'adapte automatiquement au thème clair ou sombre de l'utilisateur.
 
-La mise en page a été améliorée pour mettre en avant le logo complet `collect_cards.png` sans recadrage. Le titre textuel a été retiré afin que le visuel prenne toute la place disponible. Les liens sont désormais incrustés en bas de l'image afin qu'ils ne la coupent plus et que l'ensemble tienne sur une seule hauteur d'écran, sans défilement.
+La mise en page a été améliorée pour mettre en avant le logo complet `collect_cards.png` sans recadrage. Le titre textuel a été retiré afin que le visuel prenne toute la place disponible. Les liens apparaissent juste sous l'image (qui occupe environ 75 % de la hauteur) afin qu'ils ne la recouvrent plus et que l'ensemble tienne sur une seule hauteur d'écran, sans défilement.
 
 Cette page fournit une porte d'entrée unique vers les réseaux sociaux et boutiques de **Collect Cards**. Elle peut être hébergée via GitHub Pages.
 
