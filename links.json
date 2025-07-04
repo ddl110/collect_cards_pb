@@ -8,19 +8,19 @@
     },
     {
       "title": "eBay",
-      "url": "https://www.ebay.com/usr/collectcards",
+      "url": "https://www.ebay.fr/usr/collect_cards_tcg",
       "icon": "fa-brands fa-ebay",
       "preview": "assets/ebay_preview.jpg"
     },
     {
       "title": "Facebook",
-      "url": "https://www.facebook.com/collect.cards.10?locale=fr_FR",
+      "url": "https://www.facebook.com/collect.cards.tcg/",
       "icon": "fa-brands fa-facebook",
       "preview": "assets/facebook_preview.jpg"
     },
     {
       "title": "On rachète vos cartes",
-      "url": "mailto:contact@collectcards.com?subject=Rachat%20de%20cartes&body=Dites-nous%20quelles%20cartes%20vous%20souhaitez%20vendre%20et%20ajoutez%20des%20photos%20en%20pi%C3%A8ces%20jointes.",
+      "url": "mailto:collectcardstcg@gmail.com?subject=Rachat%20de%20cartes&body=Dites-nous%20quelles%20cartes%20vous%20souhaitez%20vendre%20et%20ajoutez%20des%20photos%20en%20pi%C3%A8ces%20jointes.",
       "icon": "fa-solid fa-envelope"
     },
     {
