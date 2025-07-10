@@ -1,3 +1,5 @@
+https://ddl110.github.io/collect_cards_tcg/
+
 # Collect Cards Linktree
 
 Cette page sert de "linktree" moderne pour orienter les utilisateurs vers vos différents réseaux. Elle s'adapte automatiquement au thème clair ou sombre de l'utilisateur.
