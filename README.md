@@ -4,6 +4,8 @@ Cette page sert de "linktree" moderne pour orienter les utilisateurs vers vos di
 
 La mise en page a été améliorée pour mettre en avant le logo complet `collect_cards.png` sans recadrage. Le titre textuel a été retiré afin que le visuel prenne toute la place disponible. Les liens apparaissent juste sous l'image (qui occupe environ 75 % de la hauteur) afin qu'ils ne la recouvrent plus et que l'ensemble tienne sur une seule hauteur d'écran, sans défilement.
 
+Pour les écrans de petite taille, une feuille de style responsive réduit automatiquement la hauteur de l'image et autorise le défilement. Ainsi, le rendu mobile reste identique à celui sur ordinateur sans chevauchement des éléments.
+
 Cette page fournit une porte d'entrée unique vers les réseaux sociaux et boutiques de **Collect Cards**. Elle peut être hébergée via GitHub Pages.
 
 ## Ajouter vos liens

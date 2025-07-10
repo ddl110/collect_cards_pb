@@ -169,6 +169,28 @@
       gap: 1rem;
       justify-content: center;
     }
+
+    /* Mobile adjustments to keep the layout usable on small screens */
+    @media (max-width: 600px) {
+      body {
+        height: auto;
+        overflow-y: auto; /* Allow scrolling when space is limited */
+      }
+      .hero {
+        height: auto;
+      }
+      .hero img {
+        position: relative; /* Let the image flow with the document */
+        height: auto;
+        max-height: 60vh; /* Prevent the image from taking all the space */
+      }
+      .container {
+        position: static;
+        transform: none;
+        margin-top: 1rem;
+        padding-bottom: 2rem;
+      }
+    }
   </style>
 </head>
 <body>
